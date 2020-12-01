@@ -1,11 +1,10 @@
 from time import sleep
 
-number = int(input("plz give me a number: "))
 counter = 1
 
 while True:
-    if counter % number == 0:
-        print("HOPE!")
+    if counter % 7 == 0:
+        print("Hope!")
     else:
         print(counter)
     sleep(1)
