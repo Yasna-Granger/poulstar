@@ -1,11 +1,11 @@
 from tkinter import *
-import time
+import tkinter.ttk
 
 t = Tk()
 t.geometry('380x300')
 t.title('spin box')
 
-spinbox = Spinbox(t, from_=3, to=20, state='readonly')
+spinbox = Spinbox(t, from_=13, to=20, state='readonly')
 spinbox.grid(row=1, column=2, columnspan=3, sticky='W')
 
 def show():
@@ -38,21 +38,7 @@ def show():
         print('Italy')
     elif continent4.get() == 3:
         print('France')
-
-    #total = int(continent1.get() + continent2.get() + continent3.get() + continent4.get())
-    #if total == 4:
-    
-    #elif total == 5:
-        
-    #elif total == 6:
-        
-    #elif total == 7:
-        
-    #elif total == 8:
-        
-    #elif total == 9:
-        
-
+    print(combo1.get())
 
 #Labels
 Label(t, text='Age', fg='blue').grid(row=1, column=1)
@@ -60,6 +46,7 @@ l1=Label(t, text='Asia', fg='red').grid(row=2, column=1)
 l2=Label(t, text='America', fg='red').grid(row=3, column=1)
 l3=Label(t, text='Africa', fg='red').grid(row=4, column=1)
 l4=Label(t, text='Europe', fg='red').grid(row=5, column=1)
+l5 = Label(t, text='Which airline?', fg='blue').grid(row=7, column=1)
 #IntVars
 continent1 = IntVar()
 continent2 = IntVar()
@@ -114,7 +101,8 @@ cb1.grid(row=6, column=2)
 cb2.grid(row=6, column=3)
 cb3.grid(row=6, column=4)
 
+combo1 = tkinter.ttk.Combobox(t, values=('JetBlue Airways','Alaska Airlines','Spirit Airlines'), state='readonly')
+combo1.grid(row=7, column=2, columnspan=3)
 #Button
-button = Button(t, text='Show info', command = show).grid(row=7, column=1)
-
+button = Button(t, text='Show info', command = show).grid(row=8, column=1)
 t.mainloop()
