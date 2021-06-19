@@ -33,7 +33,8 @@ def reset():
 def saving():
     res2 = messagebox.askyesno(title='Warning', message='Do u wanna save this information?')
     if res2 == TRUE:
-        saves = open('text_form.txt', 'a')
+        its_name = e1.get() + '.txt'
+        saves = open(its_name, 'a')
         name = e1.get()
         family = e2.get()
         the_gender = 'Female'
@@ -49,6 +50,24 @@ def saving():
         the_age = spinbox.get()
         saves.write(name + '\n' + family + '\n' + the_gender + '\n' + the_year + '\n' + the_month + '\n' + the_day + '\n' + the_age + '\n' + '\n')
 
+def load():
+    try:
+        the_file_name = e1.get() + '.txt'
+        file_handle = open(the_file_name, 'r')
+        my_list = []
+        for i in range(7):
+            line = file_handle.readline().rstrip()
+            my_list.append(line)
+            if i ==1 :
+                password = line
+        if password != e2.get():
+            messagebox.showerror(title='Error box', message='Your password is not correct')
+        else:
+            for i in my_list:
+                print(i)
+
+    except:
+        messagebox.showerror(title='Error box', message='This file does not exist')
 #label
 l1 = Label(t, text='Name:').grid(row=1, column=1)
 l2 = Label(t, text='Family:').grid(row=2, column=1)
@@ -90,8 +109,8 @@ rb2 = Radiobutton(t, text='Male', variable=gender, value = 2).place(x=120, y=42)
 rb3 = Radiobutton(t, text='Prefer not to say', variable=gender, value = 3).place(x=180, y=42)
 
 #Buttons
-b1 = Button(t, text='save', command=saving).place(x=345, y=80)
-b2 = Button(t, text='Reset', command=reset).place(x=220, y=80)
-b3 = Button(t, text='Exit', command=exit_now).place(x=100, y=80)
-
+b1 = Button(t, text='save', command=saving).place(x=275, y=80)
+b2 = Button(t, text='Reset', command=reset).place(x=175, y=80)
+b3 = Button(t, text='Exit', command=exit_now).place(x=70, y=80)
+b4 = Button(t, text='Load info', command=load).place(x=390, y=80)
 mainloop()
