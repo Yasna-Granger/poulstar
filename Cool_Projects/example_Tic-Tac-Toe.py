@@ -60,7 +60,7 @@ def btnclick(buttons):
     global bclick, flag, player1_name, player2_name, playerb, playera
 
     if buttons['text'] == " " and bclick == True:
-        buttons['text'] = "X"
+        buttons['text'] = 'X'
         bclick = False
         playerb = p2.get() + " Wins!"
         playera = p1.get() + " Wins!"
@@ -73,33 +73,32 @@ def btnclick(buttons):
         checkforWin()
         flag += 1
 
-    else:
+    elif buttons['text'] == "X" or buttons['text'] == "O":
         tkinter.messagebox.showinfo(title='Tic-Tac-Toe', message='Button Already Clicked')
 
 def checkforWin():
-    def checkforWin():
-        global button1, button2, button3, button4, button5, button6, button7, button8, button9
+    global button1, button2, button3, button4, button5, button6, button7, button8, button9
     if(button1['text'] == 'X' and button2['text'] == 'X' and button3['text'] == 'X' or
-         button4['text'] == 'X' and button5['text'] == 'X' and button6['text'] == 'X' or
-         button7['text'] == 'X' and button8['text'] == 'X' and button9['text'] == 'X' or
-         button1['text'] == 'X' and button4['text'] == 'X' and button7['text'] == 'X' or
-         button2['text'] == 'X' and button5['text'] == 'X' and button8['text'] == 'X' or
-         button3['text'] == 'X' and button6['text'] == 'X' and button9['text'] == 'X' or
-         button1['text'] == 'X' and button5['text'] == 'X' and button9['text'] == 'X' or
-         button3['text'] == 'X' and button5['text'] == 'X' and button7['text'] == 'X' or):
-        disableButton()
-        tkinter.messagebox.showinfo(title='Tic-Tac-Toe', message=playera)
+        button4['text'] == 'X' and button5['text'] == 'X' and button6['text'] == 'X' or
+        button7['text'] == 'X' and button8['text'] == 'X' and button9['text'] == 'X' or
+        button1['text'] == 'X' and button4['text'] == 'X' and button7['text'] == 'X' or
+        button2['text'] == 'X' and button5['text'] == 'X' and button8['text'] == 'X' or
+        button3['text'] == 'X' and button6['text'] == 'X' and button9['text'] == 'X' or
+        button1['text'] == 'X' and button5['text'] == 'X' and button9['text'] == 'X' or
+        button3['text'] == 'X' and button5['text'] == 'X' and button7['text'] == 'X'):
+            disableButton()
+            tkinter.messagebox.showinfo(title='Tic-Tac-Toe', message=playera)
 
     elif(button1['text'] == 'O' and button2['text'] == 'O' and button3['text'] == 'O' or
-         button4['text'] == 'O' and button5['text'] == 'O' and button6['text'] == 'O' or
-         button7['text'] == 'O' and button8['text'] == 'O' and button9['text'] == 'O' or
-         button1['text'] == 'O' and button4['text'] == 'O' and button7['text'] == 'O' or
-         button2['text'] == 'O' and button5['text'] == 'O' and button8['text'] == 'O' or
-         button3['text'] == 'O' and button6['text'] == 'O' and button9['text'] == 'O' or
-         button1['text'] == 'O' and button5['text'] == 'O' and button9['text'] == 'O' or
-         button3['text'] == 'O' and button5['text'] == 'O' and button7['text'] == 'O' or):
-        disableButton()
-        tkinter.messagebox.showinfo(title='Tic-Tac-Toe', message=playerb)
+        button4['text'] == 'O' and button5['text'] == 'O' and button6['text'] == 'O' or
+        button7['text'] == 'O' and button8['text'] == 'O' and button9['text'] == 'O' or
+        button1['text'] == 'O' and button4['text'] == 'O' and button7['text'] == 'O' or
+        button2['text'] == 'O' and button5['text'] == 'O' and button8['text'] == 'O' or
+        button3['text'] == 'O' and button6['text'] == 'O' and button9['text'] == 'O' or
+        button1['text'] == 'O' and button5['text'] == 'O' and button9['text'] == 'O' or
+        button3['text'] == 'O' and button5['text'] == 'O' and button7['text'] == 'O'):
+            disableButton()
+            tkinter.messagebox.showinfo(title='Tic-Tac-Toe', message=playerb)
 
 label1 = tk.Label(root, text='Playe1: ', bg = 'white', fg = 'black', height=1, width=8)
 label1.grid(row=1, column=0)
