@@ -4,25 +4,25 @@ import time
 t = Tk()
 t.geometry('300x200')
 t.title('Chess Math')
+
 turn = 'peach'
 
-def count_up():
-    global turn
+def count_up(turn):
+    
     if turn == 'peach':
-        time.sleep(0.1)
+        time.sleep(1)
         Blue_timer.set(float(Blue_timer.get())+0.1)
     elif turn == 'blue':
-        time.sleep(0.1)
+        time.sleep(1)
         peach_timer.set(float(peach_timer.get())+0.1)
 
-def start_counting():
-    global turn
+def start_counting(turn):
     if turn == 'peach':
         turn == 'blue'
-        count_up()
+        count_up('blue')
     elif turn == 'blue':
         turn = 'peach'
-        count_up()
+        count_up('peach')
 
 def reset():
     peach_timer.set('0')

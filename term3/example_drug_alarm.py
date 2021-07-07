@@ -3,7 +3,7 @@ import threading
 import time
 
 t = Tk()
-t.geometry('500x500')
+t.geometry('500x100')
 t.title('Drug Alarm')
 
 def count_down(n):
